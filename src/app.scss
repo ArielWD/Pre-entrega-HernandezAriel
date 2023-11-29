@@ -1,0 +1,28 @@
+@font-face {
+    font-family: Planet;
+    src: url(./font/planetncompact.ttf);
+}
+@font-face {
+    font-family: Fundation;
+    src: url(./font/FoundationLogo-v0.3.ttf);
+}
+$fuente-principal:'Fundation';
+$fuente-secondaria:'Planet';
+$color-font :#DEE7EB;
+$negro:#000;
+a{
+    font-family: $fuente-secondaria;
+    text-decoration: none;
+    color: $color-font;
+}
+li{
+    color: $color-font;
+}
+h1,h2,h3,h4{
+    font-family: $fuente-principal;
+    color: $color-font;
+}
+p{
+    font-family: $fuente-secondaria;
+    color: $color-font;
+}

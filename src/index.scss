@@ -1,0 +1,23 @@
+$background:rgb(36,37,48);
+$background-gradient:linear-gradient(180deg, rgba(36,37,48,1) 0%, rgba(36,35,48,1) 25%, rgba(31,30,44,1) 50%, rgba(20,21,32,1) 75%, rgba(16,17,28,1) 100%);
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    background: $background;
+    background: $background-gradient;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow-y: hidden;
+}
+
