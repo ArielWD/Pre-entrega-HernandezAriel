@@ -1,13 +1,11 @@
-import ItemListConteiner from './components/ItemListConteiner/ItemListConteiner'
-import NavBarComponent from './components/NavBarComponent/NavBarComponent'
 
 import './app.scss'
+import { MainRouter } from './router/MainRouter'
 
 function App() {
   return(
     <>
-      <NavBarComponent/>
-      <ItemListConteiner greeting='Item Selecionados:'/>
+      <MainRouter/>
     </>
   )
 }
