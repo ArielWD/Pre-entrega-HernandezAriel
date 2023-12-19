@@ -1,4 +1,3 @@
-import { useEffect } from "react"
 import ItemListConteiner from "../components/ItemListConteiner/ItemListConteiner"
 import CategoryList from "../components/CategoryList/CategoryList";
 import { useParams } from "react-router-dom";
@@ -6,10 +5,6 @@ import { useGetProductByCategory } from "../hook/useProducts";
 
 
 const ItemsByCategory = () => {
-  
-  useEffect(() => {
-    document.title = "QQ | Home"
-  });
 
 const { category } = useParams()
 const { productsData } = useGetProductByCategory(category)
