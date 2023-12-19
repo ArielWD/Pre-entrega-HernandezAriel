@@ -1,11 +1,49 @@
 .listcontainer{
-    text-align: center;
-    background-color: rgba(0,0,0,.3);
-    width: 80%;
-    margin: auto;
-    padding: 1rem;
+    width: 70%;
+    padding: 0 1rem;
 
-    p{
-        font-size: 1rem;
+    &__titulo{
+        text-align: center;
+        font-size: 3rem;
+    }
+
+    &__items{
+        display: grid;
+        grid-template-columns: repeat(4 , 1fr);
+        padding: 1rem;
+        gap: 1rem;
+    }
+    &__item{
+        background-color: rgba($color: #000000, $alpha: .3);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 2rem;
+        padding: 1rem;
+        aspect-ratio: .6;
+        transition: all 200ms ease;
+
+        &--detail{
+            aspect-ratio: unset;
+            width: 60%;
+            margin: auto;
+        }
+
+        &:hover{
+            scale: 1.05;
+        }
+    }
+
+    &__img{
+        max-width: 300px;
+    }
+    
+    &__back{
+        text-align: center;
+        padding: 1rem;
+        margin: 1rem;
+        background-color: #fff;
+        color: #000;
     }
 }

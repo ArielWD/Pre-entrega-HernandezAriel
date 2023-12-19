@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { Home } from "../pages/Home"
 import NavBarComponent from "../components/NavBarComponent/NavBarComponent"
+import ItemDetailContainer from "../pages/ItemDetailContainer"
+import ItemsByCategory from "../pages/ItemsByCategory"
 
 export const MainRouter = () => {
   return (
@@ -8,7 +10,8 @@ export const MainRouter = () => {
         <NavBarComponent/>
         <Routes>
             <Route path="/" element={<Home />}/>
-            {/* <Route path="/item/:id" element={<ItemDetailContainer />}/> */}
+            <Route path="/item/:id" element={<ItemDetailContainer/>}/>
+            <Route path="/products/:category" element={<ItemsByCategory/>}/>
         </Routes>
     </BrowserRouter>
   )

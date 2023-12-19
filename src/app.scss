@@ -26,3 +26,8 @@ p{
     font-family: $fuente-secondaria;
     color: $color-font;
 }
+.container-list{
+    display: flex;
+    align-items: top;
+    justify-content: center;
+}
