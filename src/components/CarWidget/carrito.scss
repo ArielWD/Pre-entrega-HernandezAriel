@@ -10,5 +10,10 @@
         color: #fff;
         font-size: 3rem;
     }
-
+    span{
+        &:hover{
+            scale: 1.1;
+            cursor: pointer;
+        }
+    }
 }

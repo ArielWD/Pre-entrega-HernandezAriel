@@ -22,7 +22,7 @@ h1,h2,h3,h4{
     font-family: $fuente-principal;
     color: $color-font;
 }
-p{
+p,span,table{
     font-family: $fuente-secondaria;
     color: $color-font;
 }

@@ -1,48 +1,47 @@
 import { useState, useEffect } from "react"
-import { getProductByCategory, getProductById, getProducts } from "../services/productsServices"
+import {collection, getDocs, doc, getDoc, getFirestore, where, query} from "firebase/firestore"
 
 
-export const useGetProducts = (limit = 10) => {
+export const useGetProducts = (nameCollection = 'products') => {
     const [productsData, setProductsData] = useState([])
-  
-    useEffect(()=>{
-      getProducts(limit)
-        .then((res) => {
-          setProductsData(res.data.products)
-        })
-        .catch((error) => {
-          console.log(error);
-        })
-    },[limit])
+
+    useEffect(() => {
+      const db = getFirestore();
+      const productsCollection = collection(db, nameCollection);
+
+      getDocs(productsCollection).then((snapshot)=>{
+        setProductsData(snapshot.docs.map(doc => ({id:doc.id, ...doc.data()})))
+      })
+    }, []);
+
 
     return {productsData}
 }
-export const useGetProductById = (id) => {
+export const useGetProductById = (nameCollection = 'products', id) => {
+  const db = getFirestore();
   const [productData, setProductData] = useState({})
 
   useEffect(()=>{
-    getProductById(id)
-      .then((res) => {
-        setProductData(res.data)
-      })
-      .catch((error) => {
-        console.log(error);
-      })
+    const docRef = doc(db, nameCollection, id)
+
+    getDoc(docRef).then((doc)=>{
+      setProductData({id: doc.id, ...doc.data()})
+    })
   },[id])
 
   return {productData}
 }
-export const useGetProductByCategory = (category) => {
+export const useGetProductByCategory = (nameCollection = 'products', category) => {
   const [productsData, setProductsData] = useState([])
 
   useEffect(()=>{
-    getProductByCategory(category)
-      .then((res) => {
-        setProductsData(res.data.products)
-      })
-      .catch((error) => {
-        console.log(error);
-      })
+    const db = getFirestore();
+    const collectionRef = collection(db, nameCollection);
+    const q = query(collectionRef, where('category','==',category))
+    getDocs(q).then((snapshot)=>{
+      setProductsData(snapshot.docs.map(doc => ({id:doc.id, ...doc.data()})))
+    })
+
   },[category])
 
   return {productsData}

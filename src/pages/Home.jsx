@@ -1,19 +1,20 @@
 import { useEffect } from "react"
 import ItemListConteiner from "../components/ItemListConteiner/ItemListConteiner"
 import CategoryList from "../components/CategoryList/CategoryList";
-import { useGetProducts } from "../hook/useProducts";
+import { ItemProvider } from "../context/ItemContext";
 export const Home = () => {
 
     useEffect(() => {
         document.title = "QQ | Home"
     });
 
-    const { productsData } = useGetProducts(20)
   return (
     <>
     <div className="container-list">
       <CategoryList/>
-      <ItemListConteiner productsData={productsData} greeting='Nuestros Articulos'/>
+      <ItemProvider>
+        <ItemListConteiner greeting='Nuestros Articulos'/>
+      </ItemProvider>
     </div>
   </>
   )

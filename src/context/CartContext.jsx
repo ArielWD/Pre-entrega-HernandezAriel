@@ -4,17 +4,10 @@ export const CartContext = createContext()
 
 export const CartProvider = ({children}) =>{
 
-    const [count, setCount] = useState(0)
-
-    const handleAdd = ()=>{
-        setCount(count + 1)
-    }
-    const handleRemove = ()=>{
-        setCount(count - 1)
-    }
+    const [count, setCount] = useState([])
 
     return(
-        <CartContext.Provider value={{count , setCount, handleAdd, handleRemove}}>
+        <CartContext.Provider value={{count , setCount}}>
             {children}
         </CartContext.Provider>
     )

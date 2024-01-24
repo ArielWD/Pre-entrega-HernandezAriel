@@ -1,8 +1,38 @@
-# React + Vite
+#QQ Quantum Quarters
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Informacion General
+***
+Quantum Quarters es un proyecto ficticio para mostrar la interactividad y funcionaminto de un E-shop 
+## Tecnologias
+***
+Una lista de las tecnologias usadas en este projecto
+* HTML5
+* ReactJs
+* SASS
+* FireBase
 
-Currently, two official plugins are available:
+***
+Aparte de las tecnologias se aplico el uso de algunas librerias
+* AXIOS (despues se descarto al implementar Firebase, pero se uso durante la creacion del proyecto)
+* SweetAlert (Usada para dar mejor imagen a las alertas de compra) 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Instalacion
+***
+Pequeña introduccion para la instalacion
+```
+$ git clone https://github.com/ArielWD/Pre-entrega-HernandezAriel.git
+$ cd ../path/to/the/file
+$ npm install
+$ npm start
+
+```
+## Informacion Adicionla
+***
+Projecto Creada para el Curso de ReactJs de CoderHouse
+
+## Autor
+***
+
+Ariel Andres Hernandez
+* [Github](https://github.com/ArielWD)
+* [LinkedIn](www.linkedin.com/in/ariel-andres-hernandez-ahwd)

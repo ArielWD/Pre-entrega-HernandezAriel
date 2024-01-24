@@ -4,13 +4,13 @@ import './categorylist.scss'
 
 const CategoryList = () => {
 
-    const { categoryData } = useGetCategory([])
+    const { categories } = useGetCategory()
     return (
     <div className="category-list">
     <h3 className="category-list__titulo">Filtra por categorias</h3>
        <ul className="category-list__categorias">
         {
-            categoryData.map((category, index) => {
+            categories.map((category, index) => {
                 return( 
                     <li className="category-list__categoria" key={index}>
                         <Link to={`/products/${category}`}>

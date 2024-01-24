@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom'
-import { ItemContext } from '../../context/ItemContext'
 import { useContext } from 'react'
+import { ItemByCategoryContext } from '../../context/ItemByCategoryContext'
 
-const ItemList = () => {
+const ItemListByCategory = () => {
 
-  const { productsData } = useContext(ItemContext)
+  const { productsData } = useContext(ItemByCategoryContext)
   return (
     <div className='listcontainer__items'>
     {
@@ -25,4 +25,4 @@ const ItemList = () => {
   )
 }
 
-export default ItemList
+export default ItemListByCategory

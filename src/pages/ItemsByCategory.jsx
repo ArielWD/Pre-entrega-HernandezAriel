@@ -1,19 +1,16 @@
 import ItemListConteiner from "../components/ItemListConteiner/ItemListConteiner"
 import CategoryList from "../components/CategoryList/CategoryList";
-import { useParams } from "react-router-dom";
-import { useGetProductByCategory } from "../hook/useProducts";
-
+import { ItemByCategoryProvider } from "../context/ItemByCategoryContext";
 
 const ItemsByCategory = () => {
-
-const { category } = useParams()
-const { productsData } = useGetProductByCategory(category)
-
 return (
   <>
   <div className="container-list">
     <CategoryList/>
-    <ItemListConteiner productsData={productsData} greeting='Nuestros Articulos'/>
+    <ItemByCategoryProvider>
+        <ItemListConteiner greeting='Nuestros Articulos'/>
+    </ItemByCategoryProvider>
+
   </div>
   </>
 )

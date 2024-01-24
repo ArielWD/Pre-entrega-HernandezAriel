@@ -5,7 +5,7 @@ import ItemCount from "../components/ItemList/ItemCount"
 
 const ItemDetailContainer = () => {
   const {id} = useParams()
-  const { productData } = useGetProductById(id)
+  const { productData } = useGetProductById('products' ,id)
   
 
 return(
@@ -16,7 +16,7 @@ return(
     <h3 className='listcontainer__titulo-item'>{productData.title}</h3>
     <p className='listcontainer__texto'>{productData.description}</p>
     <p className='listcontainer__precio'>${productData.price}</p>
-    <ItemCount/>
+    <ItemCount productId={productData.id}/>
   </div>
   <Link to={'/'} className="listcontainer__back">Volver</Link>
   </>

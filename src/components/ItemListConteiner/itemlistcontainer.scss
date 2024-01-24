@@ -20,7 +20,7 @@
         align-items: center;
         justify-content: center;
         border-radius: 2rem;
-        padding: 1rem;
+        padding: .5rem;
         aspect-ratio: .6;
         transition: all 200ms ease;
 
@@ -36,7 +36,8 @@
     }
 
     &__img{
-        max-width: 300px;
+        max-width: 80%;
+        border-radius: 1rem;
     }
     
     &__back{

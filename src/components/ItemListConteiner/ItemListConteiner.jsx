@@ -1,13 +1,17 @@
 
+import { useParams } from 'react-router-dom'
 import ItemList from '../ItemList/ItemList'
 import './itemlistcontainer.scss'
+import ItemListByCategory from '../ItemList/ItemListByCategory'
 
-function ItemListConteiner({greeting ,productsData}) {
+function ItemListConteiner({greeting}) {
+
+  const { category } = useParams()
 
   return (
     <div className="listcontainer">    
         <p className="listcontainer__titulo">{greeting}</p>
-          <ItemList productsData={productsData} limit={20}/>
+        {category ? <ItemListByCategory/> : <ItemList/>}   
     </div>
   )
 }
